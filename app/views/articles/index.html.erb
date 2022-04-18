@@ -1,0 +1,16 @@
+<h1>This is Blog Application</h1>
+
+Our blog has <%= Article.public_count %> articles and counting!
+
+<ul>
+  <% @article.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "New Article", new_article_path %>
